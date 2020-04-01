@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>matrix_math_benchmarks</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="powelson.matthew@gmail.com">Matthew Powelson</maintainer>
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>cmake</buildtool_depend>
+  <depend>benchmark</depend>
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+</package>
