@@ -72,42 +72,42 @@ auto BM_ARRAYFIRE_MM = [](benchmark::State& state, int size, auto device) {
 
 int main(int argc, char** argv)
 {
-  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512 })
+  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512, 1028, 2056})
   {
     std::string name = "BM_PYTORCH_CPU_MM_Size_" + std::to_string(test_input);
     benchmark::RegisterBenchmark(name.c_str(), BM_PYTORCH_MM, test_input, torch::kCPU)
         ->UseRealTime()
         ->Unit(benchmark::TimeUnit::kMicrosecond);
   }
-  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512 })
+  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512, 1028, 2056})
   {
     std::string name = "BM_PYTORCH_GPU_MM_Size_" + std::to_string(test_input);
     benchmark::RegisterBenchmark(name.c_str(), BM_PYTORCH_MM, test_input, torch::kCUDA)
         ->UseRealTime()
         ->Unit(benchmark::TimeUnit::kMicrosecond);
   }
-  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512 })
+  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512, 1028, 2056})
   {
     std::string name = "BM_EIGEN_MM_Size_" + std::to_string(test_input);
     benchmark::RegisterBenchmark(name.c_str(), BM_EIGEN_MM, test_input)
         ->UseRealTime()
         ->Unit(benchmark::TimeUnit::kMicrosecond);
   }
-  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512 })
+  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512, 1028, 2056})
   {
     std::string name = "BM_ARRAYFIRE_CPU_MM_Size_" + std::to_string(test_input);
     benchmark::RegisterBenchmark(name.c_str(), BM_ARRAYFIRE_MM, test_input, AF_BACKEND_CPU)
         ->UseRealTime()
         ->Unit(benchmark::TimeUnit::kMicrosecond);
   }
-  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512 })
+  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512, 1028, 2056})
   {
     std::string name = "BM_ARRAYFIRE_CUDA_MM_Size_" + std::to_string(test_input);
     benchmark::RegisterBenchmark(name.c_str(), BM_ARRAYFIRE_MM, test_input, AF_BACKEND_CUDA)
         ->UseRealTime()
         ->Unit(benchmark::TimeUnit::kMicrosecond);
   }
-  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512 })
+  for (auto& test_input : { 2, 3, 4, 8, 16, 32, 64, 128, 256, 512, 1028, 2056})
   {
     std::string name = "BM_ARRAYFIRE_OPENCL_MM_Size_" + std::to_string(test_input);
     benchmark::RegisterBenchmark(name.c_str(), BM_ARRAYFIRE_MM, test_input, AF_BACKEND_OPENCL)
