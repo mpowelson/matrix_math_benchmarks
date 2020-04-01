@@ -24,6 +24,7 @@ find_package(Torch REQUIRED)
 
 add_run_benchmarks_target()
 add_benchmark(${PROJECT_NAME}_dense_multiplication src/dense_multiplication.cpp)
+add_benchmark(${PROJECT_NAME}_dense_chained_multiplication src/dense_chained_multiplication.cpp)
 
 
 #############
@@ -33,6 +34,7 @@ add_benchmark(${PROJECT_NAME}_dense_multiplication src/dense_multiplication.cpp)
 # Mark executables and/or libraries for installation
 install(TARGETS
   ${PROJECT_NAME}_dense_multiplication
+  ${PROJECT_NAME}_dense_chained_multiplication
     EXPORT ${PROJECT_NAME}-targets
     DESTINATION lib)
 install(EXPORT ${PROJECT_NAME}-targets
